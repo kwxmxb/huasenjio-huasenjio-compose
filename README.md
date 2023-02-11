@@ -261,7 +261,7 @@ cd huasenjio-compose
 执行运行容器命令后，docker将自动拉取安装配置nginx、mongodb、redis、jenkins、后端服务，第一次会比较缓慢，请耐心等待，如果遇到卡死的情况，使用`ctrl + c`终止命令，然后重复执行运行容器命令即可。
 
 ```javascript
-docker-compose -f docker-compose-open.yml up -d
+docker-compose up -d
 ```
 
 5）访问网站的关键信息
@@ -283,7 +283,7 @@ Redis密码：Redis12345*
 
 1）为什么容器运行失败？
 
-运行容器时，请确保80、37017、7379、8080、3000、8181端口不被占用，如果不幸已经有服务占用端口，则需要修改`docker-compose-open.yml`中对应容器的端口后，重新执行运行容器命令。
+运行容器时，请确保80、37017、7379、8080、3000、8181端口不被占用，如果不幸已经有服务占用端口，则需要修改`docker-compose.yml`中对应容器的端口后，重新执行运行容器命令。
 
 2）运行成功，但是还是无法访问到站点？
 
@@ -378,7 +378,7 @@ https://www.bilibili.com/video/BV1G44y1Q7MV
   └──config.js   // 服务配置文件
 ├── huasen-store       // 静态文件仓库
 ├── huasen-jenkins     // jenkins 配置
-├── docker-compose-open.yml // docker-compose 编排配置文件
+├── docker-compose.yml // docker-compose 编排配置文件
 └── huasen-frontend    // 前端界面源码
   ├── admin  // 后台管理界面源码
   ├── portal // 前台站点源码
@@ -427,7 +427,7 @@ https://www.bilibili.com/video/BV1G44y1Q7MV
 
 1）构建容器
 
-`docker-compose -f docker-compose-open.yml up -d`
+`docker-compose up -d`
 
 #### 后台服务
 
